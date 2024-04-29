@@ -55,7 +55,7 @@ namespace QTools
 
                     if (!lineMaterial)
                     {
-                        lineMaterial = new Material(Shader.Find("Mobile/VertexLit"));
+                        lineMaterial = new Material(Shader.Find("Hidden/Internal-Colored"));
                     }
                     if (UIRoot.instance != null)
                     {
@@ -637,7 +637,7 @@ namespace QTools
         }
         string translate(string text)
         {
-            if (translateMap.ContainsKey(text) && Localization.language != Language.zhCN)
+            if (translateMap.ContainsKey(text) && !Localization.isZHCN)
             {
                 return translateMap[text].ToString();
             }
